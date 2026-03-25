@@ -1,0 +1,762 @@
+<html>
+<head>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com/" crossorigin />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com/" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin >
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="prefetch" href="/images/SupernaturalPink.svg" />
+    <link rel="prefetch" href="/images/arrow-right-black.svg" />
+    <link rel="prefetch" href="/images/HomepageHero.webp" />
+    <link rel="icon" type="image/x-icon" href="/images/SupernaturalIcon.png">
+
+    <style>
+        html {
+          scroll-behavior: smooth;
+        }
+        
+        .inter-tight-<uniquifier> {
+            font-family: "Inter Tight", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: <weight>;
+            font-style: normal;
+        }
+
+        body {
+            font-family: "Inter Tight", sans-serif;
+            margin: 0 auto;
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: inherit;
+            color: inherit;
+            font-weight: 400;
+        }
+        
+        h1 {
+            color: #23232D;
+            font-size: 24px;
+            font-family: inherit;
+            font-weight: 700;
+        }
+        
+        h2 {
+            font-size: 22px;
+            color: #23232D;
+            font-family: inherit;
+            font-weight: 500;
+        }
+        
+        h3 {
+            font-size: 16px;
+        }
+        
+        h4 {
+            font-size: 14px;
+        }
+        
+        a:link {
+            cursor:pointer;
+            color: inherit;
+        }
+        
+        p {
+            font-family: inherit;
+            color: #23232D;
+            font-size: 15px;
+            line-height: 20px;
+            overflow-wrap: break-word;
+        }
+        
+        p a, a:link, a:visited, a:active {
+            text-decoration: none;
+        }
+        
+        .dropShadow {
+            box-shadow: 1px 0px 5px 1px #e9e9e9;
+        }
+
+        .pageHeader {
+            width: 100%;
+            position: relative;
+            height: auto;
+            float: left;
+            height: 65px;
+        }
+        
+        .topMenu {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .headerLeft {
+            float: left;
+            width: auto;
+        }
+        
+        .menuLogo {
+            color: black;
+            font-size: 24px;
+            font-family: inherit;
+            font-weight: 500;
+            margin-top: 25px;
+            margin-bottom: 20px;
+        }
+        
+        .topMenuLink {
+            color: #333;
+            text-decoration: none;
+            cursor: pointer;
+            text-align: center;
+        }
+        
+        .letsTalkButton1 {
+            display:block;
+            color: black;
+            height: 35px;
+            line-height: 35px;
+            font-size: 15px;
+            margin-top: 15px;
+            border: 2px solid transparent;
+            width: 125px;
+            border-radius: 30px;
+            background-image: linear-gradient(white, white), linear-gradient(to right, #D9317E, #11D9FF);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+        
+        .letsTalkButton2 {
+            display:block;
+            color: white;
+            height: 35px;
+            line-height: 35px;
+            font-size: 15px;
+            margin-top: 20px;
+            border: 2px solid transparent;
+            width: 125px;
+            border-radius: 30px;
+            background-image: linear-gradient(#23232D, #23232D), linear-gradient(to right, #D9317E, #11D9FF);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+        }
+        
+        .gradientText1 {
+            background-image: linear-gradient(to right, #D9317E, #11D9FF);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+        
+        .gradientText2 {
+            background-image: linear-gradient(to right, #D9317E, #11D9FF, #11D9FF, #11D9FF);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+        
+        .gradientText3 {
+            background-image: linear-gradient(to right, #D9317E, #D9317E, #D9317E, #11D9FF, #11D9FF, #11D9FF);
+            color: transparent;
+            background-clip: text;
+            -webkit-background-clip: text;
+        }
+        
+        .aboutPageDocument {
+            display: block;
+            flex-direction: column;
+            width: 100%;
+            margin: auto;
+            min-height: 80vh;
+        }
+        
+        .centreAlignment {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .centreAlignmentText {
+            padding: 20px 0px;
+            text-align: center;
+            width: 700px;
+        }
+        
+        .centreAlignmentImage {
+            padding: 0px 100px 100px;
+        }
+        
+        .middleAlignment {
+            display: flex;
+            flex-direction: row;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px;
+            column-gap: 40px;
+        }
+        
+        .leftBlock {
+            width: calc(80% - 120px);
+            padding: 40px 60px;
+            background: #23232D;
+            border-radius: 25px;
+            text-align: center;
+        }
+        
+        .rightBlock {
+            width: calc(80% - 120px);
+            padding: 40px 60px;
+            background: #fff;
+            border-radius: 25px;
+            text-align: center;
+        }
+        .sidebBySideAlignment {
+            display: flex;
+            flex-direction: column;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px;
+            column-gap: 40px;
+        }
+        
+        .testimonials {
+            display: flex;
+            flex-direction: row;
+            column-gap: 40px;
+        }
+        
+        .testimonialBlock {
+            width: calc(80% - 120px);
+            padding: 40px 60px;
+            background: #fff;
+            border-radius: 25px;
+        }
+        
+        .testimonialPerson {
+            display: flex;
+            flex-direction: row;
+            column-gap: 15px;
+        }
+        
+        .testimonialName {
+            display: flex;
+            flex-direction: column;    
+        }
+        
+        .contactBlock {
+            width: calc(100% - 80px);
+            padding: 40px 40px;
+            background: #fff;
+            border-radius: 25px;
+        }
+        
+        .contactForm {
+            display: flex;
+            row-gap: 10px;
+            flex-direction: column;
+        }
+        
+        .contactInput {
+            width: 100%;
+            height: 47px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #c7c7c7;
+        }
+        
+        .contactTextArea {
+            width: 100%;
+            height: 100px;
+            resize: vertical;
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid #c7c7c7;
+        }
+        
+        .submitButton {
+            width:100%;
+            height: 47px;
+            padding: 15px;
+            text-align: left;
+            color: white;
+            background: linear-gradient(to right, #D9317E, #11D9FF);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+        
+        .desktopImage {
+            display: block !important;
+        }
+        
+        .mobileImage {
+            display: none !important;
+        }
+        
+        .rightAlignment {
+            display: flex;
+            flex-direction: row-reverse;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .rightAlignmentText {
+            width: 50%;
+            padding: 100px 100px 100px 50px;
+        }
+        
+        .rightAlignmentImage {
+            width: 50%;
+            padding: 100px 50px 100px 100px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .leftAlignment {
+            display: flex;
+            flex-direction: row;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        
+        .leftAlignmentText {
+            width: 50%;
+            padding: 100px 50px 100px 100px;
+        }
+        
+        .leftAlignmentImage {
+            width: 50%;
+            padding: 100px 100px 100px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .expertiseAreas {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            column-gap: 25px;
+            flex-wrap: nowrap;
+            padding: 0px 0px 80px;
+            width: calc(100% - 235px);
+        }
+        
+        .expertiseIn {
+            width: calc(25% - 40px);
+            height: auto;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+        }
+        .contactFormContainer {
+            width: 50%;
+            padding: 100px 100px 100px 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer {
+            max-width: 900px;
+            width: 100%;
+            position: static;
+            bottom: 0px;
+            margin: 0 auto;
+            text-align: center;
+            float: left;
+            padding: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        .footerLeft {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .footerRight {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+        
+        .sociaMediaIcons {
+            display: flex;
+            justify-content: space-between;
+            width: 170px;
+            margin-top: 25px;
+        }
+        
+        .regulatory_links {
+            margin-bottom: 15px;
+            width: 200px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        @media screen and (max-width: 420px) {
+            .pageHeader {
+                padding: 0px 15px;
+                width: calc(100% - 30px);
+            }
+            
+            .menuOption {
+                width: 100px;   
+            }
+            
+            .centreAlignmentText {
+                padding: 25px 40px;
+                width: calc(100% - 80px);
+            }
+            
+            .centreAlignmentImage {
+                padding: 0px 0px 50px;
+            }
+            
+            .desktopImage {
+                display: none !important;
+            }
+            
+            .mobileImage {
+                display: block !important;
+            }
+            
+            .rightAlignment {
+                flex-direction: column;
+            }
+            
+            .rightAlignmentText {
+                width: calc(100% - 80px);
+                padding: 40px;
+            }
+            
+            .rightAlignmentImage {
+                width: 100%;
+                padding: 0px 0px 85px 0px;
+            }
+            
+            .leftAlignment {
+                flex-direction: column;
+            }
+            
+            .leftAlignmentText {
+                width: calc(100% - 80px);
+                padding: 40px;
+            }
+            
+            .leftAlignmentImage {
+                width: 100%;
+                padding: 0px 0px 85px 0px;
+            }
+            
+            .expertiseAreas {
+                display: flex;
+                flex-direction: column;
+                width: calc(100% - 80px);
+                padding: 0px 0px 40px;
+            }
+            
+            .expertiseIn {
+                width: calc(100% - 40px);
+                margin-bottom: 30px;
+            }
+            
+            .middleAlignment {
+                display: flex;
+                flex-direction: column;
+                padding: 40px;
+            }
+            
+            .leftBlock {
+                width: calc(100% - 80px);
+                padding: 40px 40px;
+                margin-bottom: 50px;
+            }
+            
+            .rightBlock {
+                width: calc(100% - 80px);
+                padding: 40px 40px; 
+            }
+            
+            .sidebBySideAlignment {
+                padding: 40px;
+                flex-direction: column;
+            }
+            
+            .testimonials {
+                display: flex;
+                flex-direction: column;
+                row-gap: 40px;
+            }
+            
+            .testimonialBlock {
+                width: calc(100% - 80px);
+                padding: 40px 40px;
+            }
+            
+            .contactFormContainer {
+                width: calc(100% - 40px);
+                padding: 0px 0px 85px 20px;
+            }
+            
+            .footer {
+                flex-direction: column;
+                width: calc(100% - 40px);
+            }
+            
+            .footerLeft {
+                align-items: center;
+            }
+            
+            .footerRight {
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
+            
+            .sociaMediaIcons {
+                width: calc(100% - 60px);
+                padding: 0px 30px;
+                margin-top: 20px;
+                margin-bottom: 30px;
+            }
+            
+            .regulatory_links {
+                margin-bottom: 30px;
+                width: calc(100% - 60px);
+                padding: 0px 30px;
+            }
+        }
+    </style>
+    
+    <meta name="robots" content="NOINDEX,FOLLOW" />	
+    <title>Supernatural Software</title>
+    <meta name="description" content="Specializes in Product consulting, dedicated to enhancing your product lines.">
+</head>
+<body id="docBody" class="documentBody">
+    <div class="pageHeader dropShadow header">
+        <div class="topMenu">
+
+            <div class="headerLeft logo menucolor">
+                <a href="/" class="homePageLink" id="Header_Logo_Link">
+                    <div class="menuLogo"><img src="/images/SupernaturalPink.svg" width="200" height="17" alt="SuperNatural_Logo"></div>
+                </a>
+            </div>
+            
+            <div class="menuLetsTalk">
+                <a href='#Contact_Form' class='topMenuLink' id='Top_Nav_Lets_Talk'><span class='letsTalkButton1'>Lets Talk <img src="/images/arrow-right-black.svg" height="12px" width="12px" style="margin-left: 10px;"></span></a>
+            </div>
+            
+        </div>
+    </div>
+        
+        <div id="aboutPageBody" class="aboutPageDocument">
+            <div class="pageSection prodMgmtHelp">
+                <div class="centreAlignment">
+                    <div class="centreAlignmentText">
+                        <p style="color:#D9317E; font-weight:bold;">Product Management Help</p>
+                        <h1 class="siteHeader homepageH1">Specializes in Product Consulting, dedicated to <span class="gradientText1">enhancing your product lines.</span></h1>
+                        <p>We are a team of dedicated individuals who are passionate about providing high quality information and services to our clients.</p>
+                    </div>
+                    <div class="centreAlignmentImage">
+                        <img src="/images/HomepageHero.webp" style="border-radius: 25px;" class="homepageImage desktopImage" height="508" width="900" alt="homepage_hero_image">
+                        <img src="/images/HomepageHero.webp" style="border-radius: 25px;" class="homepageImage mobileImage" height="180" width="320" alt="homepage_hero_image">
+                    </div>
+                </div>
+                
+            </div>
+            
+            <div class="pageSection" style="background: #23232D">
+                <div class="rightAlignment whatWeOffer">
+                    <div class="rightAlignmentText">
+                        <p class="gradientText2" style="font-weight:bold;">What we offer</p>
+                        <h1 class="siteHeader homepageH1"><span style="color:#fff">We have designers and developers</span> <span style="color:#D9317E">available to join your project</span><span style="color:#fff">, providing comprehensive support.</span></h1>
+                        <p style="color:#fff">We are a team of dedicated individuals who are passionate about providing high quality information and services to our clients.</p>
+                    </div>
+                    <div class="rightAlignmentImage">
+                        <img src="/images/WhatWeOffer.webp" style="border-radius: 25px;" class="homepageImage desktopImage" height="400" width="356" alt="what_we_offer_image" loading="lazy">
+                        <img src="/images/WhatWeOffer.webp" style="border-radius: 25px;" class="homepageImage mobileImage" height="360" width="320" alt="what_we_offer_image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pageSection" style="background: #D9317E">
+                <div class="leftAlignment howWeWork">
+                    <div class="leftAlignmentText">
+                        <p style="font-weight:bold;">How we work</p>
+                        <h1 class="siteHeader homepageH1"><span style="color:#fff">Building a successful product</span> <span style="color:#11D9FF">is challenging</span><span style="color:#fff">, and many fail.</span></h1>
+                        <p style="color:white;">We are a team of dedicated individuals who are passionate about providing high quality information and services to our clients.</p>
+                    </div>
+                    <div class="leftAlignmentImage">
+                        <img src="/images/HowWeWork.webp" style="border-radius: 25px;" class="homepageImage desktopImage" height="426" width="390" alt="how_we_we_work_image" loading="lazy">
+                        <img src="/images/HowWeWork.webp" style="border-radius: 25px;" class="homepageImage mobileImage" height="328" width="300" alt="how_we_we_work_image" loading="lazy">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pageSection areasOfExpertise">
+                <div class="centreAlignment">
+                    <div class="centreAlignmentText">
+                        <p class="gradientText3" style="font-weight:bold;">Areas of Expertise</p>
+                        <h2 class="siteHeader homepageH1">We specialize in</h2>
+                        <p>We are a team of dedicated individuals who are passionate about providing high quality information and services to our clients.</p>
+                    </div>
+                    <div class="expertiseAreas">
+                        <div class="expertiseIn dropShadow">
+                            <!--<img src="#" width="65" height="65" style="border-radius:50px;">-->
+                            <h3>Consumer Software Products</h3>
+                        </div>
+                        <div class="expertiseIn dropShadow">
+                            <!--<img src="#" width="65" height="65" style="border-radius:50px;">-->
+                            <h3>Large Administrative Systems</h3>
+                        </div>
+                        <div class="expertiseIn dropShadow">
+                            <!--<img src="#" width="65" height="65" style="border-radius:50px;">-->
+                            <h3>Industrial Applications</h3>
+                        </div>
+                        <div class="expertiseIn dropShadow">
+                            <!--<img src="#" width="65" height="65" style="border-radius:50px;">-->
+                            <h3>Fintech</h3>
+                        </div>
+                    </div>
+
+                </div>
+                
+            </div>
+            
+            <div class="pageSection" style="background: #DCDDE0;">
+                <div class="middleAlignment clientCaseStudies">
+                    <div class="leftBlock dropShadow">
+                        <p style="font-weight:bold;" class="gradientText3">Client Case Studies</p>
+                        <h1 class="siteHeader homepageH1"><span style="color:#fff">Since our founding in 2016,</span> <span style="color:#11D9FF">we've collaborated on products </span><span style="color:#fff">from over 40 commpanies.</span></h1>
+                        <p style="color:white;">Detailed discussion and case studies are available upon request</p>
+                        <a href="#Contact_Form"><span class='letsTalkButton2' style="margin: 0 auto;">Lets talk <img src="/images/arrow-right-white.svg" height="12px" width="12px" style="margin-left: 10px;" loading="lazy"></span></a>
+                    </div>
+                    <div class="rightBlock dropShadow">
+                        <img src="/images/CoverageMap.webp" style="border-radius: 25px;" class="homepageImage desktopImage" height="202" width="310" alt="geography_image" loading="lazy">
+                        <img src="/images/CoverageMap.webp" style="border-radius: 25px;" class="homepageImage mobileImage" height="150" width="230" alt="geography_image" loading="lazy">
+                        <p style="font-weight:bold;" class="gradientText3">Geography</p>
+                        <h1 class="siteHeader homepageH1"><span style="color:#000">While our primary customer</span> <span style="color:#D9317E">base is in the US</span><span style="color:#000">, we also provide coverage in <span style="color:#D9317E">Europe</span>.</span></h1>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pageSection" style="background: #fff; display: none;">
+                <div class="sidebBySideAlignment clientTestimonials">
+                    <div class="TestimonialHeader">
+                        <p style="font-weight:bold;" class="gradientText3">Client Case Studies</p>
+                        <h2 style="font-weight:bold; margin-bottom: 0px">We love our users</h2>
+                        <h2 style="font-weight:bold; color:#D9317E;margin-top: 0px">because they love us.</h2>
+                    </div>
+                    <div class="testimonials">
+                        <div class="testimonialBlock dropShadow" style="background: #fff">
+                            <div class="testimonialPerson">
+                                <div class="testimonialImage">
+                                    <img src="#" width="25" height="25" style="border-radius:50px;">
+                                </div>
+                                <div class="testimonialName">
+                                    <span style="font-weight:bold;">Virginia Morton</span>
+                                    <span>CEO, Some Company</span>
+                                </div>
+                            </div>
+                            <div class="testimonialText">
+                                <p><span style="color:#000">"Their deep involvement and strategic insight were game changers for our project."</p>
+                            </div>
+                        </div>
+                        <div class="testimonialBlock dropShadow" style="background: #fff">
+                            <div class="testimonialPerson">
+                                <div class="testimonialImage">
+                                    <img src="#" width="25" height="25" style="border-radius:50px;">
+                                </div>
+                                <div class="testimonialName">
+                                    <span style="font-weight:bold;">Virginia Morton</span>
+                                    <span>CEO, Some Company</span>
+                                </div>
+                            </div>
+                            <div class="testimonialText">
+                                <p><span style="color:#000">"Their deep involvement and strategic insight were game changers for our project."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pageSection" style="background: #23232D" id="Contact_Form">
+                <div class="leftAlignment contactForm">
+                    <div class="leftAlignmentText">
+                        <p class="gradientText2" style="font-weight:bold;">Contact</p>
+                        <h2 class="siteHeader homepageH1"><span style="color:#fff">Get in touch</span> <span style="color:#D9317E">with us</span><span style="color:#fff">.</span></h2>
+                        <p style="color:#fff">Ready to take your product to the next level? Contact us for a consultation or more information.</p>
+                    </div>
+                    <div class="contactFormContainer">
+                        <div class="contactBlock dropShadow" style="background: #fff">
+                            <div id="register">
+                                <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contactForm" id="Contact_Form" title="Supernatural Software Contact Form">
+                                    <input type="hidden" name="bot-field" />
+                                    <input type="hidden" name="form-name" value="contact" />
+
+                                    <input type="text"  class="inputField contactInput" name="contact_name" id="contactName" placeholder="Name" value="" required>
+                                    
+                                    <input type="email" class="inputField contactInput" name="contact_email" id="contactEmail" placeholder="Email" value="" required>
+            
+                                    <select name="contact_topic" class="contactInput" id="What_Can_We_Help_You_With" required>
+                                        <option value="" selected disabled>What can we help you with?</option>
+                                        <option value="Product Management">Product Management</option>
+                                        <option value="Product Strategy">Product Strategy</option>
+                                        <option value="Product Development">Product Development</option>
+                                    </select>  
+                                    
+                                    <textarea cols="10" rows="5" class="inputField contactTextArea" name="contact_message" id="contactMessage" placeholder="Write your message..." value=""></textarea>
+            
+                                    <input type="submit" class="submitButton" name="contact_submit_button" id="submitButton" value="Send Message">
+            
+                                    <p style="font-size:12px; text-align: center;">Thank you for reaching out to us.</p>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" role="contentinfo">
+            <div class="footerLeft">
+                <a href="/" class="homePageLink" id="Header_Logo_Link">
+                    <div class="menuLogo"><img src="/images/SupernaturalPink.svg" width="200" height="17" alt="SuperNatural_Logo" loading="lazy"></div>
+                </a>
+                <p class='copyright' style='font-size:12px;'>Copyright &copy; 2020-<script>document.write(new Date().getFullYear())</script> Supernatural Software. All rights reserved.</p>
+            </div>
+            <div class="footerRight">
+                <div class="sociaMediaIcons">
+                    <!--<a href="#" class="socialLink" id="X_Social_Link" target="_blank"><img src="/images/social_icon_x.svg" class="socialIcon" width="20" height="20" alt="X" loading="lazy"></a>
+                    <a href="#" class="socialLink" id="FB_Social_Link" target="_blank"><img src="/images/social_icon_fb.svg" class="socialIcon" width="20" height="20" alt="FB" loading="lazy"></a>
+                    <a href="#" class="socialLink" id="LI_Social_Link" target="_blank"><img src="/images/social_icon_li.svg" class="socialIcon" width="20" height="20" alt="LI" loading="lazy"></a>
+                    <a href="#" class="socialLink" id="IG_Social_Link" target="_blank"><img src="/images/social_icon_ig.svg" class="socialIcon" width="20" height="20" alt="IG" loading="lazy"></a>-->
+                </div>
+                <div class="regulatory_links"><a href="#" class="no-ajax" style="text-decoration:underline;font-size: 12px;">Terms</a> <a href="#" class="no-ajax" style="text-decoration:underline;font-size: 12px;">Privacy</a> <a href="#" class="no-ajax" style="text-decoration:underline;font-size: 12px;">Cookies</a></div>
+            </div>
+        </div>
+        <script>
+            if ( window.history.replaceState ) {
+                window.history.replaceState( null, null, window.location.href );
+            }
+        </script>
+   </body>
+</html>
