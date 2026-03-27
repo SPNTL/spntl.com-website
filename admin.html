@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SPNTL - Admin</title>
+  <link rel="icon" type="image/x-icon" href="/images/SupernaturalIcon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: "Inter Tight", sans-serif; background: #23232D; color: #23232D; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+    #gate { display: flex; flex-direction: column; align-items: center; justify-content: center; min-height: 100vh; width: 100%; padding: 40px; }
+    .gate-logo { margin-bottom: 40px; }
+    .gate-box { background: #fff; border-radius: 25px; padding: 48px 40px; width: 100%; max-width: 420px; box-shadow: 1px 0px 5px 1px #1a1a22; text-align: center; }
+    .gate-box h2 { font-size: 20px; font-weight: 600; color: #23232D; margin-bottom: 8px; }
+    .gate-box p { font-size: 14px; color: #888; margin-bottom: 28px; }
+    .gate-input-row { display: flex; gap: 10px; }
+    .gate-input { flex: 1; height: 47px; padding: 0 15px; border-radius: 12px; border: 1px solid #c7c7c7; font-family: inherit; font-size: 15px; outline: none; transition: border-color 0.2s; }
+    .gate-input:focus { border-color: #D9317E; }
+    .gate-btn { height: 47px; padding: 0 24px; background: linear-gradient(to right, #D9317E, #11D9FF); color: #fff; border: none; border-radius: 12px; font-family: inherit; font-size: 15px; font-weight: 600; cursor: pointer; transition: opacity 0.2s; }
+    .gate-btn:hover { opacity: 0.9; }
+    .gate-error { color: #D9317E; font-size: 13px; margin-top: 14px; min-height: 18px; }
+    #admin { display: none; width: 100%; min-height: 100vh; background: #f4f4f6; }
+    .admin-header { background: #23232D; padding: 20px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.15); }
+    .admin-header-inner { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 40px; }
+    .admin-header-inner img { height: 17px; }
+    .admin-badge { font-size: 12px; font-weight: 600; color: #11D9FF; border: 1px solid #11D9FF; border-radius: 20px; padding: 4px 14px; letter-spacing: 0.5px; }
+    .admin-logout { color: #888; font-size: 13px; cursor: pointer; text-decoration: none; transition: color 0.2s; }
+    .admin-logout:hover { color: #fff; }
+    .admin-body { max-width: 1000px; margin: 0 auto; padding: 40px; }
+    .admin-title-row { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 32px; }
+    .admin-title { font-size: 28px; font-weight: 700; color: #23232D; }
+    .admin-subtitle { font-size: 14px; color: #888; }
+    .gradientText { background-image: linear-gradient(to right, #D9317E, #11D9FF); color: transparent; background-clip: text; -webkit-background-clip: text; }
+    .project-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .project-card { background: #fff; border-radius: 20px; padding: 32px; box-shadow: 1px 0px 5px 1px #e9e9e9; transition: transform 0.15s, box-shadow 0.15s; position: relative; overflow: hidden; }
+    .project-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+    .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+    .card-name { font-size: 18px; font-weight: 700; color: #23232D; }
+    .card-status { font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; white-space: nowrap; }
+    .status-active { background: #e6faf0; color: #0a8a4f; }
+    .status-development { background: #e8f0fe; color: #2b6cb0; }
+    .status-concept { background: #fef3e2; color: #b8600b; }
+    .status-internal { background: #f3e8ff; color: #7c3aed; }
+    .card-desc { font-size: 14px; line-height: 1.5; color: #555; margin-bottom: 20px; }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
+    .tag { font-size: 11px; font-weight: 500; background: #f4f4f6; color: #666; padding: 4px 10px; border-radius: 8px; }
+    .card-meta { display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #f0f0f0; padding-top: 14px; font-size: 12px; color: #999; }
+    .card-link { font-size: 13px; font-weight: 600; color: #D9317E; text-decoration: none; transition: opacity 0.2s; }
+    .card-link:hover { opacity: 0.7; }
+    .admin-footer { max-width: 1000px; margin: 0 auto; padding: 20px 40px 40px; text-align: center; font-size: 12px; color: #aaa; }
+    @media screen and (max-width: 700px) { .project-grid { grid-template-columns: 1fr; } .admin-body { padding: 24px 20px; } .admin-header-inner { padding: 0 20px; } .gate-input-row { flex-direction: column; } }
+  </style>
+</head>
+<body>
+  <div id="gate">
+    <div class="gate-logo"><img src="/images/SupernaturalPink.svg" width="200" height="17" alt="SPNTL"></div>
+    <div class="gate-box">
+      <h2>Admin Access</h2>
+      <p>Enter the password to continue.</p>
+      <div class="gate-input-row">
+        <input type="password" id="pw" class="gate-input" placeholder="Password" autocomplete="off" onkeydown="if(event.key==='Enter')checkPw()">
+        <button class="gate-btn" onclick="checkPw()">Enter</button>
+      </div>
+      <div class="gate-error" id="err"></div>
+    </div>
+  </div>
+  <div id="admin">
+    <div class="admin-header">
+      <div class="admin-header-inner">
+        <img src="/images/SupernaturalPink.svg" width="200" height="17" alt="SPNTL">
+        <div style="display:flex; align-items:center; gap:20px;">
+          <span class="admin-badge">ADMIN</span>
+          <a class="admin-logout" onclick="logout()">Log out</a>
+        </div>
+      </div>
+    </div>
+    <div class="admin-body">
+      <div class="admin-title-row">
+        <div><div class="admin-title">Project <span class="gradientText">Portfolio</span></div></div>
+        <div class="admin-subtitle">Internal use only</div>
+      </div>
+      <div class="project-grid">
+        <div class="project-card"><div class="card-top"><div class="card-name">Lighthouse</div><span class="card-status status-active">Active</span></div><div class="card-desc">AI-powered RFP response platform. Also known as Alexandria / ALXNDRIA.</div><div class="card-tags"><span class="tag">AI / ML</span><span class="tag">SaaS</span><span class="tag">Government</span></div><div class="card-meta"><span>golight.house</span><a href="https://golight.house/main" class="card-link" target="_blank">Visit &#8594;</a></div></div>
+        <div class="project-card"><div class="card-top"><div class="card-name">SendYourHours</div><span class="card-status status-development">Development</span></div><div class="card-desc">Timesheet and invoice management system for government contractors.</div><div class="card-tags"><span class="tag">Enterprise</span><span class="tag">Costpoint</span><span class="tag">Invoicing</span></div><div class="card-meta"><span>sendyourhours.com</span><a href="https://dev.sendyourhours.com" class="card-link" target="_blank">Visit &#8594;</a></div></div>
+        <div class="project-card"><div class="card-top"><div class="card-name">Hannibal AI</div><span class="card-status status-development">Development</span></div><div class="card-desc">AI-powered email triage and data capture system for financial teams.</div><div class="card-tags"><span class="tag">AI / ML</span><span class="tag">Fintech</span><span class="tag">Email</span></div><div class="card-meta"><span>hannibal.trading</span><a href="https://hannibal.trading/login" class="card-link" target="_blank">Visit &#8594;</a></div></div>
+        <div class="project-card"><div class="card-top"><div class="card-name">Audit360</div><span class="card-status status-active">Active</span></div><div class="card-desc">Airport and facility audit management platform.</div><div class="card-tags"><span class="tag">Enterprise</span><span class="tag">Compliance</span><span class="tag">Mobile</span></div><div class="card-meta"><span></span><span class="card-link" style="cursor:default; opacity:0.4;">Internal &#8594;</span></div></div>
+        <div class="project-card"><div class="card-top"><div class="card-name">Riposte Capital</div><span class="card-status status-concept">Concept</span></div><div class="card-desc">Email triage and AI capture system for a financial analyst team.</div><div class="card-tags"><span class="tag">AI / ML</span><span class="tag">Fintech</span><span class="tag">Azure / M365</span></div><div class="card-meta"><span></span><span class="card-link" style="cursor:default; opacity:0.4;">Scoping &#8594;</span></div></div>
+        <div class="project-card"><div class="card-top"><div class="card-name">Stox</div><span class="card-status status-internal">Internal</span></div><div class="card-desc">Internal project hosted on GitHub under SPNTL.</div><div class="card-tags"><span class="tag">Internal</span></div><div class="card-meta"><span></span><a href="https://github.com/SPNTL" class="card-link" target="_blank">GitHub &#8594;</a></div></div>
+      </div>
+    </div>
+    <div class="admin-footer">&#169; 2020-2026 Supernatural Software. All rights reserved. This page is not indexed by search engines.</div>
+  </div>
+  <script>
+    const ADMIN_PW = "spntl2026";
+    function checkPw() { const input = document.getElementById("pw"); if (input.value === ADMIN_PW) { document.getElementById("gate").style.display = "none"; document.getElementById("admin").style.display = "block"; document.body.style.background = "#f4f4f6"; document.body.style.justifyContent = "flex-start"; } else { document.getElementById("err").textContent = "Incorrect password."; input.value = ""; input.focus(); } }
+    function logout() { document.getElementById("admin").style.display = "none"; document.getElementById("gate").style.display = "flex"; document.getElementById("pw").value = ""; document.getElementById("err").textContent = ""; document.body.style.background = "#23232D"; document.body.style.justifyContent = "center"; }
+  </script>
+</body>
+</html>
